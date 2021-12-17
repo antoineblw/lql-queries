@@ -1,0 +1,15 @@
+{
+    "evaluatorId": "Cloudtrail",
+    "policyId": "abdataresidencyct-1",
+    "title": "S3 bucket created outside Canada",
+    "enabled": true,
+    "policyType": "Violation",
+    "alertEnabled": true,
+    "alertProfile": "LW_CloudTrail_Alerts",
+    "evalFrequency": "Hourly",
+    "queryId": "DataResidency",
+    "limit": 1000,
+    "severity": "High",
+    "description": "An S3 bucket was created outside acceptable region",
+    "remediation": "Create S3 in Canada and move data over"
+}

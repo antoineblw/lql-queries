@@ -1,0 +1,20 @@
+evaluatorId: Cloudtrail
+queryId: DataResidency
+queryText: |-
+  DataResidency {
+      source {
+          CloudTrailRawEvents
+      }
+      filter {
+          EVENT_SOURCE = 's3.amazonaws.com'
+          AND EVENT_NAME = 'CreateBucket'
+          AND EVENT:awsRegion not in ('ca-central-1')
+          AND ERROR_CODE is null
+      }
+      return distinct{
+          INSERT_ID,
+          INSERT_TIME,
+          EVENT_TIME,
+          EVENT
+      }
+  }

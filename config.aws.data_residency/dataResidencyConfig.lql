@@ -1,0 +1,18 @@
+queryId: s3DataCanada
+queryText: |-
+  s3DataCanada {
+      source {
+          LW_CFG_AWS
+      }
+      filter {
+         CONTAINS(RESOURCE_TYPE, 's3:bucket')
+         AND LENGTH(RESOURCE_CONFIG) > 10
+         AND RESOURCE_REGION not in ('ca-central-1')
+      }
+      return {
+         ACCOUNT_ID,
+         RESOURCE_TYPE,
+         RESOURCE_REGION,
+         RESOURCE_CONFIG
+      }
+  }

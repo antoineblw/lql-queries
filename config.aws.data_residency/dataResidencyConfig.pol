@@ -1,0 +1,14 @@
+{
+    "policyId": "dataresidency-1",
+    "title": "S3 bucket exits outside Canada",
+    "enabled": true,
+    "policyType": "Violation",
+    "alertEnabled": true,
+    "alertProfile": "LW_CFG_AWS_DEFAULT_PROFILE.CFG_AWS_NewViolation",
+    "evalFrequency": "Daily",
+    "queryId": "s3DataCanada",
+    "limit": 1000,
+    "severity": "High",
+    "description": "An S3 bucket exists outside acceptable region",
+    "remediation": "Create S3 in Canada and move data over"
+}
