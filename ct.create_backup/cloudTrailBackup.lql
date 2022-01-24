@@ -1,0 +1,19 @@
+evaluatorId: Cloudtrail
+queryId: CloudBackup2
+queryText: |-
+  CloudBackup2 {
+      source {
+          CloudTrailRawEvents
+      }
+      filter {
+          EVENT_SOURCE = 'backup.amazonaws.com'
+          AND EVENT_NAME = 'StartBackupJob'
+          AND ERROR_CODE is null
+      }
+      return distinct{
+          INSERT_ID,
+          INSERT_TIME,
+          EVENT_TIME,
+          EVENT
+      }
+  }

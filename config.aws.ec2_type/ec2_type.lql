@@ -1,0 +1,15 @@
+queryId: EC2Type
+queryText: |-
+  EC2Type {
+      source {
+          LW_CFG_AWS
+      }
+      filter {
+         CONTAINS(RESOURCE_TYPE, 'ec2')
+      }
+      return {
+         ACCOUNT_ID,
+         RESOURCE_TYPE,
+         RESOURCE_CONFIG
+      }
+  }

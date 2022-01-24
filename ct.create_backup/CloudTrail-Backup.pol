@@ -1,0 +1,15 @@
+{
+    "evaluatorId": "Cloudtrail",
+    "policyId": "antoineconfig-1",
+    "title": "Backup seen",
+    "enabled": true,
+    "policyType": "Violation",
+    "alertEnabled": true,
+    "alertProfile": "LW_CloudTrail_Alerts",
+    "evalFrequency": "Hourly",
+    "queryId": "CloudBackup2",
+    "limit": 1000,
+    "severity": "info",
+    "description": "A backup has occured",
+    "remediation": "No recommendation"
+}
