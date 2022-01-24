@@ -1,0 +1,8 @@
+#!/bin/bash
+
+LQL_QUERY=`ls *.lql`
+LQL_NAME=`grep queryId $LQL_QUERY | awk '{print $2}'`
+echo "QueryId=$LQL_NAME"
+
+lacework lql run $LQL_NAME
+
