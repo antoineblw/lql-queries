@@ -1,0 +1,15 @@
+{
+    "evaluatorId": "Cloudtrail",
+    "policyId": "regionresources-1",
+    "title": "AWS region restrictions",
+    "enabled": true,
+    "policyType": "Violation",
+    "alertEnabled": true,
+    "alertProfile": "LW_CloudTrail_Alerts",
+    "evalFrequency": "Hourly",
+    "queryId": "RegionResources",
+    "limit": 1000,
+    "severity": "High",
+    "description": "Our policy is not to create resources outside of approved AWS regions",
+    "remediation": "Create an exception or move the resources"
+}

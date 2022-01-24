@@ -1,0 +1,20 @@
+evaluatorId: Cloudtrail
+queryId: RegionResources
+queryText: |-
+  RegionResources {
+      source {
+          CloudTrailRawEvents
+      }
+      filter {
+          EVENT_SOURCE IN ('s3.amazonaws.com', 'ec2.amazonaws.com', 'rds.amazonaws.com')
+          AND EVENT_NAME LIKE 'Create%'
+          AND EVENT:awsRegion not in ('ap-east-1', 'ap-west-1')
+          AND ERROR_CODE is null
+      }
+      return distinct{
+          INSERT_ID,
+          INSERT_TIME,
+          EVENT_TIME,
+          EVENT
+      }
+  }
