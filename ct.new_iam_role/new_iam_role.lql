@@ -1,0 +1,19 @@
+evaluatorId: Cloudtrail
+queryId: NewIAMRole
+queryText: |-
+  NewIAMRole {
+      source {
+          CloudTrailRawEvents
+      }
+      filter {
+          EVENT_SOURCE = 'iam.amazonaws.com'
+          AND EVENT_NAME = 'CreateRole'
+          AND ERROR_CODE is null
+      }
+      return distinct{
+          INSERT_ID,
+          INSERT_TIME,
+          EVENT_TIME,
+          EVENT
+      }
+  }

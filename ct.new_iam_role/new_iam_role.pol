@@ -1,0 +1,15 @@
+{
+    "evaluatorId": "Cloudtrail",
+    "policyId": "newiamrole-1",
+    "title": "IAM role created",
+    "enabled": true,
+    "policyType": "Violation",
+    "alertEnabled": true,
+    "alertProfile": "LW_CloudTrail_Alerts",
+    "evalFrequency": "Hourly",
+    "queryId": "NewIAMRole",
+    "limit": 1000,
+    "severity": "Info",
+    "description": "Would like to log every time a new IAM role is created",
+    "remediation": "Create an exception or move the resources"
+}
