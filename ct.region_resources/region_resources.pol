@@ -5,7 +5,7 @@
     "enabled": true,
     "policyType": "Violation",
     "alertEnabled": true,
-    "alertProfile": "LW_CloudTrail_Alerts",
+    "alertProfile": "LW_CloudTrail_Alerts.CloudTrailDefaultAlert_AwsResource",
     "evalFrequency": "Hourly",
     "queryId": "RegionResources",
     "limit": 1000,
